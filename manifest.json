@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Kanataso Member Badge Replacer",
+  "version": "0.1.0",
+  "description": "YouTubeのライブチャットで、天音かなた Ch. のメンバーバッジ画像を活動中のものに差し替えます。",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "host_permissions": ["https://www.youtube.com/*", "https://m.youtube.com/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["badges/*.png", "badges/*.jpg"],
+      "matches": ["https://www.youtube.com/*", "https://m.youtube.com/*"]
+    }
+  ]
+}
